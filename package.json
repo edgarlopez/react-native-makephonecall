@@ -1,0 +1,33 @@
+{
+  "name": "react-native-makephonecall",
+  "version": "1.0.0",
+  "description": "Make Phone Call. iOS and Android.",
+  "repository": {
+    "url": "https://github.com/edgarlopez/react-native-makephonecall.git",
+    "type": "git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"This library has no automated tests. Please use the example app to manually test changes.\" && exit 1"
+  },
+  "homepage": "https://github.com/edgarlopez/react-native-makephonecall#readme",
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "phone-call",
+    "call",
+    "phone",
+    "tel"
+  ],
+  "author": "Edgar Lopez",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": ">=0.47"
+  },
+  "files": [
+    "android/",
+    "ios/",
+    "index.js"
+  ]
+}
