@@ -1,10 +1,10 @@
 
 Pod::Spec.new do |s|
-  s.name         = "RNReactNativePhoneCall"
+  s.name         = "RNMakePhoneCall"
   s.version      = "1.0.0"
-  s.summary      = "RNReactNativePhoneCall"
+  s.summary      = "RNMakePhoneCall"
   s.description  = <<-DESC
-                  RNReactNativePhoneCall
+                  RNMakePhoneCall
                    DESC
   s.homepage     = ""
   s.license      = "MIT"
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author       = { "Edgar Lopez" => "inge.edgarlopez@gmail.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/edgarlopez/react-native-phone-call.git", :tag => "master" }
-  s.source_files  = "RNReactNativePhoneCall/**/*.{h,m}"
+  s.source_files  = "RNMakePhoneCall/**/*.{h,m}"
   s.requires_arc = true
 
 
@@ -20,3 +20,5 @@ Pod::Spec.new do |s|
   #s.dependency "others"
 
 end
+
+  

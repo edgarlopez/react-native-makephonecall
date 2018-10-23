@@ -1,6 +1,6 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNReactNativeMakePhoneCall } = NativeModules;
+const { RNMakePhoneCall } = NativeModules;
 
-export default RNReactNativeMakePhoneCall;
+export default RNMakePhoneCall;

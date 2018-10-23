@@ -5,7 +5,7 @@
 #import <React/RCTBridgeModule.h>
 #endif
 
-@interface RNReactNativeMakePhoneCall : NSObject <RCTBridgeModule>
+@interface RNMakePhoneCall : NSObject <RCTBridgeModule>
 
 @end
   

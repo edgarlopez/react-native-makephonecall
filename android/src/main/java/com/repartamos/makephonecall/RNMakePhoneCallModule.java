@@ -23,14 +23,14 @@ public class RNReactNativeMakePhoneCallModule extends ReactContextBaseJavaModule
 
   private final ReactApplicationContext reactContext;
 
-  public RNReactNativeMakePhoneCallModule(ReactApplicationContext reactContext) {
+  public RNMakePhoneCallModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
   }
 
   @Override
   public String getName() {
-    return "RNReactNativeMakePhoneCall";
+    return "RNMakePhoneCall";
   }
 
   @ReactMethod

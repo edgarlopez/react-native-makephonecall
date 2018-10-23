@@ -1,11 +1,12 @@
 //
-//  RNReactNativeMakePhoneCall.swift
-//  RNReactNativeMakePhoneCall
+//  RNMakePhoneCall.swift
+//  RNMakePhoneCall
 //
-//  Created by Edgar Lopez on 10/17/18.
+//  Created by Edgar Lopez on 10/23/18.
 //  Copyright © 2018 Facebook. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Foundation
 
