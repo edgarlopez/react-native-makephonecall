@@ -20,7 +20,7 @@
     "phone",
     "tel"
   ],
-  "author": "Edgar Lopez",
+  "author": "Edgar Lopez inge.edgarlopez@gmail.com",
   "license": "MIT",
   "peerDependencies": {
     "react-native": ">=0.47"

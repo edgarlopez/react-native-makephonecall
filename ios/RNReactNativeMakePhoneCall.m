@@ -8,9 +8,10 @@
     return dispatch_get_main_queue();
 }
 
-@interface RCT_EXPORT_MODULE(MakePhoneCall, NSObject)
-
+RCT_EXPORT_MODULE()
 RCT_EXTERN_METHOD(makeCall: (NSString *)number)
-
 @end
+
+
   
+
