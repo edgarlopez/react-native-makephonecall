@@ -12,9 +12,14 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(makeCall: (NSString *)number)
 {
+    
+    NSString *phoneNumber = [[number componentsSeparatedByCharactersInSet:
+                            [[NSCharacterSet decimalDigitCharacterSet] invertedSet]]
+                           componentsJoinedByString:@""];
+    
     UIApplication *application = [UIApplication sharedApplication];
     
-    NSURL *URL = [NSURL URLWithString:[@"tel://" stringByAppendingString:number]];
+    NSURL *URL = [NSURL URLWithString:[@"tel://" stringByAppendingString:phoneNumber]];
     
     if([[UIDevice currentDevice].systemVersion floatValue] >= 10.0){
         if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) {

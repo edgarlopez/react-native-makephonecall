@@ -1,9 +1,9 @@
 
 //
-//  RNReactNativeMakePhoneCallModule
+//  RNMakePhoneCallModule
 //
 //  Created by Edgar Lopez on 10/17/18.
-//  Copyright © 2018 Facebook. All rights reserved.
+//  Copyright © 2018 Repartamos All rights reserved.
 //
 
 package com.repartamos.makephonecall;
