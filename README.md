@@ -1,6 +1,16 @@
 
 # react-native-makephonecall
 
+## Introduction
+
+This is a small module that allows you to initiate a phone call in React Native. 
+
+### **NOTE**
+
+No additional user input is required for Android and the call starts instantly (Apple always asks confirmation since the last iOS updates).
+This will work on a actual device. **The iOS simulator does not support phone call feature**.
+
+
 ## Getting started
 
 `$ npm install react-native-makephonecall --save`
