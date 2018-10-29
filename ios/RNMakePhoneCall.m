@@ -42,5 +42,14 @@ RCT_EXPORT_METHOD(makeCall: (NSString *)number)
         }
     }
 }
+
+RCT_EXPORT_METHOD(checkPermission:(RCTResponseSenderBlock) callback)
+{
+    callback(@[[NSNull null], @"authorized"]);
+}
+
+RCT_EXPORT_METHOD(requestPermission:(RCTResponseSenderBlock) callback)
+{
+    callback(@[[NSNull null], @"authorized"]);
+}
 @end
-  

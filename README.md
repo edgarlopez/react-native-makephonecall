@@ -50,3 +50,31 @@ import Phone from 'react-native-makephonecall';
 
 Phone.makeCall("88855443322");
 ```
+
+## Permissions Methods (optional)
+`checkPermission` (callback) - checks permission to access phone call.  
+`requestPermission` (callback) - request permission to access  phone call.  
+
+Usage as follows:
+```es
+Phone.checkPermission((err, permission) => {
+  if (err) throw err;
+
+  // Phone.PERMISSION_AUTHORIZED || Phone.PERMISSION_UNDEFINED || Phone.PERMISSION_DENIED
+  if (permission === 'undefined') {
+
+  }
+  if (permission === 'authorized') {
+    // yay!
+  }
+  if (permission === 'denied') {
+    // x.x
+    Phone.requestPermission((error, requestPermission) => {
+      // ...
+    })
+  }
+})
+```
+
+These methods are only useful on Android.
+

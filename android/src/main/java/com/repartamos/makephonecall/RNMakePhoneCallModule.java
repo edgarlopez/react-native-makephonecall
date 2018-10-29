@@ -29,7 +29,7 @@ public class RNMakePhoneCallModule extends ReactContextBaseJavaModule {
   private static final String PERMISSION_DENIED = "denied";
   private static final String PERMISSION_AUTHORIZED = "authorized";
   private static final String PERMISSION_PHONE_CALL = Manifest.permission.CALL_PHONE;
-  private static final int PERMISSION_REQUEST_CODE = 888;
+  private static final int PERMISSION_REQUEST_CODE = 686;
 
   private static Callback requestCallback;
 
@@ -47,30 +47,23 @@ public class RNMakePhoneCallModule extends ReactContextBaseJavaModule {
     final Activity activity = getCurrentActivity();
 
     if (activity != null) {
-
-      boolean result = true;
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
-        result = getReactApplicationContext().checkSelfPermission(PERMISSION_PHONE_CALL)
-                == PackageManager.PERMISSION_GRANTED;
-      } else {
-        // targetSdkVersion < Android M, we have to use PermissionChecker
-        result = PermissionChecker.checkSelfPermission(getReactApplicationContext(),PERMISSION_PHONE_CALL)
-                == PermissionChecker.PERMISSION_GRANTED;
-      }
-
-      if (result) {
+      if (isPermissionGranted().equals(PERMISSION_AUTHORIZED)) {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:" + number.replaceAll("[^0-9]+", "")));
         getReactApplicationContext().startActivity(callIntent);
-      } else {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-          ActivityCompat.requestPermissions(activity, new String[]{PERMISSION_PHONE_CALL},1);
-        }
       }
     }
   }
-
+  /*
+   * Check permission
+   */
+  @ReactMethod
+  public void checkPermission(Callback callback) {
+      callback.invoke(null, isPermissionGranted());
+  }
+  /*
+   * Request permission
+   */
   @ReactMethod
     public void requestPermission(Callback callback) {
         requestReadPhonePermission(callback);
@@ -121,7 +114,18 @@ public class RNMakePhoneCallModule extends ReactContextBaseJavaModule {
      */
     private String isPermissionGranted() {
       // return -1 for denied and 1
-      int res = getReactApplicationContext().checkCallingOrSelfPermission(PERMISSION_PHONE_CALL);
-      return (res == PackageManager.PERMISSION_GRANTED) ? PERMISSION_AUTHORIZED : PERMISSION_DENIED;
+      boolean result = false;
+
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+        result = getReactApplicationContext().checkSelfPermission(PERMISSION_PHONE_CALL)
+                == PackageManager.PERMISSION_GRANTED;
+      } else {
+        // targetSdkVersion < Android M, we have to use PermissionChecker
+        result = PermissionChecker.checkSelfPermission(getReactApplicationContext(),PERMISSION_PHONE_CALL)
+                == PermissionChecker.PERMISSION_GRANTED;
+      }
+
+      return result ? PERMISSION_AUTHORIZED : PERMISSION_DENIED;
     }
 }
