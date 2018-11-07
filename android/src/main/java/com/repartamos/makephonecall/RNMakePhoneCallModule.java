@@ -49,6 +49,7 @@ public class RNMakePhoneCallModule extends ReactContextBaseJavaModule {
     if (activity != null) {
       if (isPermissionGranted().equals(PERMISSION_AUTHORIZED)) {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         callIntent.setData(Uri.parse("tel:" + number.replaceAll("[^0-9]+", "")));
         getReactApplicationContext().startActivity(callIntent);
       }
