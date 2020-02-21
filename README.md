@@ -78,3 +78,4 @@ Phone.checkPermission((err, permission) => {
 
 These methods are only useful on Android.
 
+
