@@ -4,6 +4,7 @@
 ## Introduction
 
 This is a small module that allows you to initiate a phone call in React Native. 
+Support Android X.
 
 ### **NOTE**
 
