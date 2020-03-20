@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                   RNMakePhoneCall
                    DESC
-  s.homepage     = ""
+  s.homepage     = "https://github.com/edgarlopez/react-native-makephonecall"
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author       = { "Edgar Lopez" => "inge.edgarlopez@gmail.com" }
@@ -15,7 +15,6 @@ Pod::Spec.new do |s|
   s.source_files  = "RNMakePhoneCall/**/*.{h,m}"
   s.requires_arc = true
 
-  s.homepage     = "https://github.com/edgarlopez/react-native-makephonecall"
   s.dependency "React"
   #s.dependency "others"
 
