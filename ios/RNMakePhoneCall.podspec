@@ -11,11 +11,11 @@ Pod::Spec.new do |s|
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author       = { "Edgar Lopez" => "inge.edgarlopez@gmail.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/edgarlopez/react-native-phone-call.git", :tag => "master" }
+  s.source       = { :git => "https://github.com/edgarlopez/react-native-makephonecall.git", :tag => "master" }
   s.source_files  = "RNMakePhoneCall/**/*.{h,m}"
   s.requires_arc = true
 
-
+  s.homepage     = "https://github.com/edgarlopez/react-native-makephonecall"
   s.dependency "React"
   #s.dependency "others"
 
