@@ -1,23 +1,15 @@
 require 'json'
-
-package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
+package_json = JSON.parse(File.read('package.json'))
 
 Pod::Spec.new do |s|
-  s.name           = package['name']
-  s.version        = package['version']
-  s.summary        = package['description']
-  s.description    = package['description']
-  s.license        = package['license']
-  s.author         = package['author']
-  s.homepage       = package['homepage']
-  s.source         = { :git => package['repository']['url'], :tag => s.version }
-
-  s.requires_arc   = true
+  s.name           = package_json['name']
+  s.version        = package_json['version']
+  s.summary        = package_json['description']
+  s.homepage       = "https://github.com/edgarlopez/react-native-makephonecall"
+  s.license        = package_json['license']
+  s.author         = { package_json["author"] => package_json["author"] }
   s.platform       = :ios, '8.0'
-
-  s.preserve_paths = 'README.md', 'package.json', 'index.js'
+  s.source         = { :git => "#{package_json["repository"]["url"]}.git", :tag => "v#{s.version}" }
   s.source_files   = 'ios/*.{h,m}'
-
-  s.homepage       = package['repository']['url']
   s.dependency 'React'
 end
